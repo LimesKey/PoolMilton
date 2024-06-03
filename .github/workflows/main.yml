@@ -16,10 +16,12 @@ jobs:
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          accountId: bc43d694e9ea56ff8d69d71855166dcb
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           projectName: PoolMilton
           directory: /public
           # Optional: Enable this if you want to have GitHub Deployments triggered
           # Optional: Switch what branch you are publishing to.
           # By default this will be the branch which triggered this workflow
           branch: main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
