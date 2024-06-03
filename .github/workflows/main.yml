@@ -15,6 +15,7 @@ jobs:
         uses: pnpm/action-setup@v4.0.0
         with:
           version: 9.1.4
+          run_install: 
 
       - name: Install Build Dependencies
         run: |
@@ -32,13 +33,16 @@ jobs:
               
        # Run a build step here if your project requires
 
+      - name: Tauri Build
+        run: pnpm tauri build
+
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           projectName: poolmilton
-          directory: /public
+          directory: /.svelte-kit/cloudflare/public
           # Optional: Enable this if you want to have GitHub Deployments triggered
           # Optional: Switch what branch you are publishing to.
           # By default this will be the branch which triggered this workflow
