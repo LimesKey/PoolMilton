@@ -18,7 +18,7 @@ jobs:
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          projectName: PoolMilton
+          projectName: poolmilton
           directory: /public
           # Optional: Enable this if you want to have GitHub Deployments triggered
           # Optional: Switch what branch you are publishing to.
