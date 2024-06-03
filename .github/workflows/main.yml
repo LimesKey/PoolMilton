@@ -16,7 +16,6 @@ jobs:
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: bc43d694e9ea56ff8d69d71855166dcb
           projectName: PoolMilton
           directory: /public
