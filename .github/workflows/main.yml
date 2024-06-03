@@ -1,28 +1,27 @@
-# This is a basic workflow to help you get started with Actions
+on: [push]
 
-name: CI
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Cloudflare Pages GitHub Action
-          uses: cloudflare/pages-action@v1.5.0
-            
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Run a build step here if your project requires
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: bc43d694e9ea56ff8d69d71855166dcb
+          projectName: PoolMilton
+          directory: /public
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          # Optional: Switch what branch you are publishing to.
+          # By default this will be the branch which triggered this workflow
+          branch: main
