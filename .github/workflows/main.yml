@@ -1,0 +1,57 @@
+on: [push]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9.1.4
+          run_install: true
+
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: setup node
+        uses: actions/setup-node@v4.0.2
+        with:
+          node-version: 18.12
+
+      - name: Install Build Dependencies
+        run: |
+            sudo apt update
+            sudo apt install libwebkit2gtk-4.0-dev \
+                build-essential \
+                curl \
+                wget \
+                file \
+                libssl-dev \
+                libgtk-3-dev \
+                libayatana-appindicator3-dev \
+                librsvg2-dev
+              
+       # Run a build step here if your project requires
+
+      - name: Tauri Build
+        run: pnpm tauri build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          projectName: poolmilton
+          directory: .svelte-kit/cloudflare
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          # Optional: Switch what branch you are publishing to.
+          # By default this will be the branch which triggered this workflow
+          branch: main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
