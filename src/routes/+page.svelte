@@ -16,16 +16,12 @@
 </script>
 
 <mytitle>
-    <h1>Welcome to the St Kateri Hack Club</h1>
+    <h1>Welcome to a magical place</h1>
 </mytitle>
 
 <time_display>
     <h2>Current time:  {time}</h2>
 </time_display>
-
-<h1> fghfghg</h1>
-<h1>hello world</h1>
-<h1>Welcome to the hack club</h1>
 
 <style>
     mytitle{
