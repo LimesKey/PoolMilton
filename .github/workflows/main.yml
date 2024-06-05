@@ -17,7 +17,7 @@ jobs:
           version: 9.1.4
           run_install: true
           
-     - name: install Rust stable
+      - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
           # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
