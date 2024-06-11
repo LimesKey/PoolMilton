@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import { invoke } from '@tauri-apps/api/tauri';
 
-    let time: string;
+    import { onMount } from 'svelte';
+    import { invoke } from '@tauri-apps/api/tauri';    
+    
     let services = [
         { title: "Water Analysis", description: "Comprehensive chemical analysis of your pool water to ensure safety and clarity.", image: "/src/assets/taylor-test-kit.png" },
         { title: "Filter Cleaning", description: "Cleans skimmer basket and pump filter every visit, will wash cartridge filters if required.", image: "/src/assets/cartridge-filter.png" },
@@ -14,6 +14,7 @@
         { plan: "Once a Month", price: "$30/month", description: "Basic monthly testing for low-maintenance pools.", responsibilities: "Monthly chemical testing and balancing. No cleaning tasks included." }
     ];
 
+    let time: string;
     onMount(async () => {
         try {
             time = await invoke('display_time');
@@ -22,6 +23,7 @@
             console.error('Error occurred:', error);
         }
     });
+
 </script>
 
 <style>
@@ -67,16 +69,18 @@
     }
     .button {
         padding: 1rem 2rem;
+        opacity: 0.95;
         background: white;
         color: #1e88e5;
-        border: none;
+        border: 0.5px solid white;
         border-radius: 25px;
         cursor: pointer;
         font-size: 1.2rem;
-        transition: background 0.3s;
+        transition: all 0.4s ease-out;
     }
     .button:hover {
-        background: #f1f1f1;
+        background: #deebcc;
+        opacity: 0.9;
     }
     .section {
         padding: 4rem 2rem;
@@ -144,8 +148,6 @@
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
     </nav>
-
-    <link rel="icon" href="/src/assets/splash.ico" type="image/x-con">
 </header>
 
 <section id="home" class="title">

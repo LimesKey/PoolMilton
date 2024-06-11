@@ -4,7 +4,8 @@
     "beforeBuildCommand": "pnpm run build",
     "beforeDevCommand": "pnpm run dev",
     "devPath": "http://localhost:5173",
-    "distDir": "../.svelte-kit/cloudflare"
+    "distDir": "../.svelte-kit/cloudflare",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "rustsveltewebsite",
