@@ -185,4 +185,5 @@
     <h2>Contact Us</h2>
     <p>Email: info@ryandl.com</p>
     <p>Phone: (647)-803-8955</p>
+    <p>{time}</p>
 </section>
