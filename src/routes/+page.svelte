@@ -26,7 +26,7 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap');
-
+    
     :global(body) {
         margin: 0;
         font-family: 'Roboto', sans-serif;
@@ -117,9 +117,7 @@
         flex-direction: column;
         align-items: center;
     }
-    .contact p {
-        margin-left: 2rem;
-    }
+
     .service-item img {
         max-width: 40%;
         max-width: 30%;
@@ -146,6 +144,8 @@
         <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
     </nav>
+
+    <link rel="icon" href="/src/assets/splash.jpg" type="image/x-con">
 </header>
 
 <section id="home" class="title">
