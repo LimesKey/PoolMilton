@@ -9,7 +9,7 @@
         { title: "Monthly Maintenance", description: "We're able to do light routine maintence tasks like washing the stones and sides of the pool.\n \t We can also wash out your salt water chlorinator cell to ensure it's functioning at it's maximum.", image: "/src/assets/pool-pressure-washing.jpg" },
     ];
     let pricing = [
-        { plan: "Twice a Week", price: "$120/month", description: "Ensure your pool is always in top condition with bi-weekly testing and maintenance.", responsibilities: "Includes chemical testing, balancing, and contaminant checks twice a week. Minor cleaning tasks included." },
+        { plan: "Twice a Week", price: "$120/month", description: "Best for frequent pool-goers and for people who have either a really large or really small pool. .", responsibilities: "Includes water testing, purchasing and adding chemicals and minor cleaning tasks included." },
         { plan: "Once a Week", price: "$70/month", description: "Regular weekly testing to maintain the balance and cleanliness of your pool.", responsibilities: "Includes weekly chemical testing and balancing. One-time contaminant check per week." },
         { plan: "Once a Month", price: "$30/month", description: "Basic monthly testing for low-maintenance pools.", responsibilities: "Monthly chemical testing and balancing. No cleaning tasks included." }
     ];
@@ -145,7 +145,7 @@
         <a href="#contact">Contact</a>
     </nav>
 
-    <link rel="icon" href="/src/assets/splash.jpg" type="image/x-con">
+    <link rel="icon" href="/src/assets/splash.ico" type="image/x-con">
 </header>
 
 <section id="home" class="title">
