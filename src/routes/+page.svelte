@@ -3,6 +3,7 @@
     import { onMount } from 'svelte';
     import { invoke } from '@tauri-apps/api/tauri';    
     
+    
     let services = [
         { title: "Water Analysis", description: "Comprehensive chemical analysis of your pool water to ensure safety and clarity.", image: "/src/assets/taylor-test-kit.png" },
         { title: "Filter Cleaning", description: "Cleans skimmer basket and pump filter every visit, will wash cartridge filters if required.", image: "/src/assets/cartridge-filter.png" },
