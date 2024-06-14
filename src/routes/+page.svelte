@@ -3,9 +3,9 @@
     import { invoke } from '@tauri-apps/api/tauri';    
     
     let services = [
-        { title: "Water Analysis", description: "Comprehensive chemical analysis of your pool water to ensure safety and clarity.", image: "/src/assets/taylor-test-kit.png" },
-        { title: "Filter Cleaning", description: "Cleans skimmer basket and pump filter every visit, will wash cartridge filters if required.", image: "/src/assets/cartridge-filter.png" },
-        { title: "Monthly Maintenance", description: "We're able to do light routine maintence tasks like washing the stones and sides of the pool.\n \t We can also wash out your salt water chlorinator cell to ensure it's functioning at it's maximum.", image: "/src/assets/pool-pressure-washing.jpg" },
+        { title: "Water Analysis", description: "Comprehensive chemical analysis of your pool water to ensure safety and clarity.", image: "/src/static/taylor-test-kit.png" },
+        { title: "Filter Cleaning", description: "Cleans skimmer basket and pump filter every visit, will wash cartridge filters if required.", image: "/src/static/cartridge-filter.png" },
+        { title: "Monthly Maintenance", description: "We're able to do light routine maintence tasks like washing the stones and sides of the pool.\n \t We can also wash out your salt water chlorinator cell to ensure it's functioning at it's maximum.", image: "/src/static/pool-pressure-washing.jpg" },
     ];
     let pricing = [
         { plan: "Twice a Week", price: "$120/month", description: "Best for frequent pool-goers and for people who have either a really large or really small pool.", responsibilities: "Includes water testing, purchasing and adding chemicals and minor cleaning tasks included." },
@@ -51,7 +51,7 @@
         align-items: center;
         justify-content: center;
         height: 80vh;
-        background: linear-gradient(135deg, rgba(30, 136, 229, 0.8) 0%, rgba(66, 165, 245, 0.8) 100%), url('/src/assets/pool-side.jpg') no-repeat center center;
+        background: linear-gradient(135deg, rgba(30, 136, 229, 0.8) 0%, rgba(66, 165, 245, 0.8) 100%), url('/src/static/pool-side.jpg') no-repeat center center;
         background-size: cover;
         color: white;
         text-align: center;
