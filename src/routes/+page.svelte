@@ -1,10 +1,14 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    
+
+    import taylor_test_kit from '$lib/images/taylor-test-kit.png';
+    import cartridge_filter from '$lib/images/cartridge-filter.png';
+    import pool_washing from '$lib/images/pool-pressure-washing.jpg';
+
     let services = [
-        { title: "Water Analysis", description: "Comprehensive chemical analysis of your pool water to ensure safety and clarity.", image: "/src/static/taylor-test-kit.png" },
-        { title: "Filter Cleaning", description: "Cleans skimmer basket and pump filter every visit, will wash cartridge filters if required.", image: "/src/static/cartridge-filter.png" },
-        { title: "Monthly Maintenance", description: "We're able to do light routine maintence tasks like washing the stones and sides of the pool.\n \t We can also wash out your salt water chlorinator cell to ensure it's functioning at it's maximum.", image: "/src/static/pool-pressure-washing.jpg" },
+        { title: "Water Analysis", description: "Comprehensive chemical analysis of your pool water to ensure safety and clarity.", image:taylor_test_kit },
+        { title: "Filter Cleaning", description: "Cleans skimmer basket and pump filter every visit, will wash cartridge filters if required.", image: cartridge_filter},
+        { title: "Monthly Maintenance", description: "We're able to do light routine maintence tasks like washing the stones and sides of the pool.\n \t We can also wash out your salt water chlorinator cell to ensure it's functioning at it's maximum.", image:pool_washing},
     ];
     let pricing = [
         { plan: "Twice a Week", price: "$120/month", description: "Best for frequent pool-goers and for people who have either a really large or really small pool.", responsibilities: "Includes water testing, purchasing and adding chemicals and minor cleaning tasks included." },
@@ -59,7 +63,7 @@
         align-items: center;
         justify-content: center;
         height: 80vh;
-        background: linear-gradient(135deg, rgba(30, 136, 229, 0.8) 0%, rgba(66, 165, 245, 0.8) 100%), url('/src/static/pool-side.jpg') no-repeat center center;
+        background: linear-gradient(135deg, rgba(30, 136, 229, 0.8) 0%, rgba(66, 165, 245, 0.8) 100%), url('src/lib/images/pool-side.jpg') no-repeat center center;
         background-size: cover;
         color: white;
         text-align: center;
