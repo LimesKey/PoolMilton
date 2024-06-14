@@ -19,7 +19,7 @@
     			
 	let git_commit: string;
     onMount(async () => {
-        const res = await fetch('https://api.github.com/repos/ChocolateLoverRaj/canvideo/commits?per_page=1');
+        const res = await fetch('https://api.github.com/repos/LimesKey/PoolMilton/commits?per_page=1');
         const data = await res.json();
         git_commit = data[0].commit.message;
     });
