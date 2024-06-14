@@ -63,7 +63,7 @@
         align-items: center;
         justify-content: center;
         height: 80vh;
-        background: linear-gradient(135deg, rgba(30, 136, 229, 0.8) 0%, rgba(66, 165, 245, 0.8) 100%), url('src/lib/images/pool-side.jpg') no-repeat center center;
+        background: linear-gradient(135deg, rgba(30, 136, 229, 0.8) 0%, rgba(66, 165, 245, 0.8) 100%), url('/src/assets/pool-side.jpg') no-repeat center center;
         background-size: cover;
         color: white;
         text-align: center;
