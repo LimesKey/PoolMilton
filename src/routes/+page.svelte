@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import { invoke } from '@tauri-apps/api/tauri';    
     
     let services = [
         { title: "Water Analysis", description: "Comprehensive chemical analysis of your pool water to ensure safety and clarity.", image: "/src/static/taylor-test-kit.png" },
@@ -13,22 +12,24 @@
         { plan: "Once a Month", price: "$30/month", description: "Basic monthly testing for low-maintenance pools.", responsibilities: "Monthly chemical testing and balancing. No cleaning tasks included." }
     ];
 
-    let time: string;
-    let git_commit: string;
+    			
+	let git_commit: string;
     onMount(async () => {
-        try {
-            time = await invoke('display_time');
-            console.log(time);
-        } catch (error) {
-            console.error('Error occurred:', error);
-        }
+        const res = await fetch('https://api.github.com/repos/ChocolateLoverRaj/canvideo/commits?per_page=1');
+        const data = await res.json();
+        git_commit = data[0].commit.message;
     });
 
-    fetch('https://api.github.com/repos/ChocolateLoverRaj/canvideo/commits?per_page=1')
-    .then(res => res.json())
-    .then(res => {
-        git_commit = res[0].commit.message
-    })
+    // let time: string;
+    // onMount(async () => {
+    //     try {
+    //         time = await invoke('display_time');
+    //         console.log(time);
+    //     } catch (error) {
+    //         console.error('Error occurred:', error);
+    //     }
+    // });
+
 </script>
 
 <style>
@@ -201,6 +202,6 @@
     <h2>Contact Us</h2>
     <p>Email: info@ryandl.com</p>
     <p>Phone: (647)-803-8955</p>
-    <p>{time}</p>
+    <div id="time">undefined time</div>
     <p>{git_commit}</p>
 </section>

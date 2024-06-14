@@ -26,5 +26,5 @@ fn display_time() -> String {
     let client = SntpClient::new();
     let result = client.synchronize("pool.ntp.org").unwrap();
     let local_time: DateTime<Local> = DateTime::from(result.datetime().into_chrono_datetime().unwrap());
-    local_time.time().to_string()
+    local_time.date_naive().to_string()
 }
