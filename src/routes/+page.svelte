@@ -14,6 +14,7 @@
     ];
 
     let time: string;
+    let git_commit: string;
     onMount(async () => {
         try {
             time = await invoke('display_time');
@@ -22,6 +23,12 @@
             console.error('Error occurred:', error);
         }
     });
+
+    fetch('https://api.github.com/repos/ChocolateLoverRaj/canvideo/commits?per_page=1')
+    .then(res => res.json())
+    .then(res => {
+        git_commit = res[0].commit.message
+    })
 </script>
 
 <style>
@@ -195,4 +202,5 @@
     <p>Email: info@ryandl.com</p>
     <p>Phone: (647)-803-8955</p>
     <p>{time}</p>
+    <p>{git_commit}</p>
 </section>
