@@ -154,6 +154,12 @@
     .service-item-content {
         flex: 1;
     }
+
+    .misc {
+        font-style: italic;
+        font-size: small;
+        padding: 1%;
+    }
 </style>
 
 <header>
@@ -206,6 +212,9 @@
     <h2>Contact Us</h2>
     <p>Email: info@ryandl.com</p>
     <p>Phone: (647)-803-8955</p>
-    <div id="time">undefined time</div>
-    <p>{git_commit}</p>
+    <br>
+    <div class="misc">
+        <div id="time">TimeUndefined</div>
+        <p>Commit: {git_commit}</p>
+    </div>
 </section>
