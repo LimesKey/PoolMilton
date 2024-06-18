@@ -9,7 +9,6 @@
 
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
-
 		<script>
 			const time = document.getElementById('time');
 			window.__TAURI__.invoke('display_time', { }).then(data => {
@@ -17,8 +16,6 @@
 			}).catch(error => {
 			time.innerText = error;
 			});
-
 		</script>
-
 	</body>
 </html>
